@@ -1,0 +1,38 @@
+<link rel="import" href="bower_components/polymer/polymer-element.html">
+<link rel="import" href="bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="bower_components/paper-item/paper-item.html">
+<link rel="import" href="bower_components/paper-listbox/paper-listbox.html">
+
+<dom-module id="dropdown-input">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <paper-dropdown-menu label="Dinosaurs">
+      <paper-listbox slot="dropdown-content" selected="{{selected}}">
+        <paper-item>allosaurus</paper-item>
+        <paper-item>brontosaurus</paper-item>
+        <paper-item>carcharodontosaurus</paper-item>
+        <paper-item>diplodocus</paper-item>
+      </paper-listbox>
+    </paper-dropdown-menu>
+  </template>
+
+  <script>
+    class DropdownInput extends Polymer.Element {
+      static get is() { return 'dropdown-input'; }
+      static get properties() {
+        return {
+          selected: {
+            type: String,
+            value: '-1'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(DropdownInput.is, DropdownInput);
+  </script>
+</dom-module>
