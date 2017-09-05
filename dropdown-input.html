@@ -10,7 +10,7 @@
         display: block;
       }
     </style>
-    <input type="hidden" name="{{named}}"></input>
+    <input type="hidden" name="{{named}}" value="{{value}}"></input>
     <paper-dropdown-menu id="object" label="{{label}}" on-selected-item-changed="change">
       <paper-listbox slot="dropdown-content" selected="{{selected}}">
           <slot></slot>
@@ -36,6 +36,9 @@
           },
           param:{
             type:String
+          },
+          value:{
+            type:String
           }
         };
       }
@@ -45,7 +48,8 @@
         var item = this.$.object.selectedItem.shadowRoot.host.innerHTML;
         else
         var item = this.$.object.selectedItem.shadowRoot.host.getAttribute(this.param);        
-        this.shadowRoot.querySelector(`[name='${this.named}']`).value = item;
+        // this.shadowRoot.querySelector(`[name='${this.named}']`).value = item;
+        this.value=item;
       }
       
     }

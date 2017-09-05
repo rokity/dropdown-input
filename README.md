@@ -16,4 +16,8 @@ $ bower i rokity/dropdown-input --save
 
 3. param : name of the propreties to copy on input value (id,value,innerHTML or html, custom properties)
 
+4. label : the label of paper-dropdown-menu
+
+5. value : default value for input text to pass via Form or Iron-Form
+
 
