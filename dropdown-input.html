@@ -10,12 +10,10 @@
         display: block;
       }
     </style>
-    <paper-dropdown-menu label="Dinosaurs">
+    <input type="hidden" name="{{named}}"></input>
+    <paper-dropdown-menu id="object" label="Dinosaurs" on-selected-item-changed="change">
       <paper-listbox slot="dropdown-content" selected="{{selected}}">
-        <paper-item>allosaurus</paper-item>
-        <paper-item>brontosaurus</paper-item>
-        <paper-item>carcharodontosaurus</paper-item>
-        <paper-item>diplodocus</paper-item>
+          <slot></slot>
       </paper-listbox>
     </paper-dropdown-menu>
   </template>
@@ -28,9 +26,21 @@
           selected: {
             type: String,
             value: '-1'
+          },
+          named: {
+            type: String
+          },
+          param:{
+            type:String
           }
         };
       }
+
+      change() {        
+        var item = this.$.object.selectedItem.shadowRoot.host;        
+        this.shadowRoot.querySelector(`[name='${this.named}']`).value = item.id;
+      }
+      
     }
 
     window.customElements.define(DropdownInput.is, DropdownInput);

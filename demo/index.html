@@ -10,6 +10,7 @@
 
     <link rel="import" href="../bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
     <link rel="import" href="../bower_components/iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../bower_components/paper-item/paper-item.html">
     <link rel="import" href="../dropdown-input.html">
 
     <custom-style>
@@ -22,7 +23,12 @@
       <h3>Basic dropdown-input demo</h3>
       <demo-snippet>
         <template>
-          <dropdown-input ></dropdown-input>
+          <dropdown-input selected="-1" named="stocazzo">
+              <paper-item id="1">diplodocus</paper-item>
+              <paper-item id="2">allosaurus</paper-item>
+              <paper-item id="3">brontosaurus</paper-item>
+              <paper-item id="4">carcharodontosaurus</paper-item>
+          </dropdown-input>
         </template>
       </demo-snippet>
     </div>
