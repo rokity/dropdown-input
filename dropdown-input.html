@@ -11,7 +11,7 @@
       }
     </style>
     <input type="hidden" name="{{named}}"></input>
-    <paper-dropdown-menu id="object" label="Dinosaurs" on-selected-item-changed="change">
+    <paper-dropdown-menu id="object" label="{{label}}" on-selected-item-changed="change">
       <paper-listbox slot="dropdown-content" selected="{{selected}}">
           <slot></slot>
       </paper-listbox>
@@ -23,6 +23,10 @@
       static get is() { return 'dropdown-input'; }
       static get properties() {
         return {
+	  label: {
+		type:String,
+		value:''
+		},
           selected: {
             type: String,
             value: '-1'
