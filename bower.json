@@ -1,6 +1,6 @@
 {
   "name": "dropdown-input",
-  "description": "dropdown menu with input above",
+  "description": "dropdown menu with input above for FORM or IRON-FORM",
   "main": "dropdown-input.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0",

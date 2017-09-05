@@ -1,21 +1,19 @@
 # \<dropdown-input\>
 
-dropdown menu with input above
+Dropdown menu with input above for FORM or IRON-FORM
 
-## Install the Polymer-CLI
+## Install 
 
-First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your element locally.
-
-## Viewing Your Element
 
 ```
-$ polymer serve
+$ bower i rokity/dropdown-input --save
 ```
+## Api
 
-## Running Tests
+1. selected : set selected paper-item
 
-```
-$ polymer test
-```
+2. named : name of the parameter to pass via FORM or IRON-FORM
 
-Your application is already set up to be tested via [web-component-tester](https://github.com/Polymer/web-component-tester). Run `polymer test` to run your application's test suite locally.
+3. param : name of the propreties to copy on input value (id,value,innerHTML or html, custom properties)
+
+

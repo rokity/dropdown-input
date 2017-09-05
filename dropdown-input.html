@@ -37,8 +37,11 @@
       }
 
       change() {        
-        var item = this.$.object.selectedItem.shadowRoot.host;        
-        this.shadowRoot.querySelector(`[name='${this.named}']`).value = item.id;
+        if(this.param=="html" || this.param=="innerHTML")
+        var item = this.$.object.selectedItem.shadowRoot.host.innerHTML;
+        else
+        var item = this.$.object.selectedItem.shadowRoot.host.getAttribute(this.param);        
+        this.shadowRoot.querySelector(`[name='${this.named}']`).value = item;
       }
       
     }
