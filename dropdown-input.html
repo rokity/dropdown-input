@@ -19,14 +19,13 @@
   </template>
 
   <script>
-    class DropdownInput extends Polymer.Element {
-      static get is() { return 'dropdown-input'; }
-      static get properties() {
-        return {
-	  label: {
-		type:String,
-		value:''
-		},
+     Polymer({
+      is: 'dropdown-input',
+      properties: {
+          label: {
+	        	type:String,
+		        value:''
+		      },
           selected: {
             type: String,
             value: '-1'
@@ -40,10 +39,8 @@
           value:{
             type:String
           }
-        };
-      }
-
-      change() {        
+      },
+      change:function() {        
         if(this.param=="html" || this.param=="innerHTML")
         var item = this.$.object.selectedItem.shadowRoot.host.innerHTML;
         else
@@ -51,9 +48,6 @@
         // this.shadowRoot.querySelector(`[name='${this.named}']`).value = item;
         this.value=item;
       }
-      
-    }
-
-    window.customElements.define(DropdownInput.is, DropdownInput);
+     });
   </script>
 </dom-module>
