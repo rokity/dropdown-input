@@ -38,15 +38,20 @@
           },
           value:{
             type:String
+          },
+          callback:{
+            type:Object
           }
       },
       change:function() {        
+        var host = this.$.object.selectedItem.shadowRoot.host;
         if(this.param=="html" || this.param=="innerHTML")
-        var item = this.$.object.selectedItem.shadowRoot.host.innerHTML;
+        var item = host.innerHTML;
         else
-        var item = this.$.object.selectedItem.shadowRoot.host.getAttribute(this.param);        
+        var item = host.getAttribute(this.param);        
         // this.shadowRoot.querySelector(`[name='${this.named}']`).value = item;
         this.value=item;
+        this.dispatchEvent(new CustomEvent('change', {detail: {host: host}}));
       }
      });
   </script>
