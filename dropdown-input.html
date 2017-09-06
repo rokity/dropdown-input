@@ -51,7 +51,7 @@
         var item = host.getAttribute(this.param);        
         // this.shadowRoot.querySelector(`[name='${this.named}']`).value = item;
         this.value=item;
-        this.dispatchEvent(new CustomEvent('change', {detail: {host: host}}));
+        this.dispatchEvent(new CustomEvent('change', {detail: {item: host}}));
       }
      });
   </script>

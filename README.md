@@ -20,4 +20,13 @@ $ bower i rokity/dropdown-input --save
 
 5. value : default value for input text to pass via Form or Iron-Form
 
+## Event
+
+1. change : when user select an item on dropdown
+    ```javascript
+        document.querySelector('dropdown-input').addEventListener('change', function (e) {
+      console.log(e.detail.item); // return item DOM 
+  })
+    ```
+
 
