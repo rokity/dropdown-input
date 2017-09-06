@@ -25,8 +25,8 @@ $ bower i rokity/dropdown-input --save
 1. change : when user select an item on dropdown
     ```javascript
         document.querySelector('dropdown-input').addEventListener('change', function (e) {
-      console.log(e.detail.item); // return item DOM 
-  })
+      console.log(e.detail.item); 
+      // return item DOM  })
     ```
 
 
