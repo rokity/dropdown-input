@@ -11,7 +11,8 @@
       }
     </style>
     <input type="hidden" name="{{named}}" value="{{value}}"></input>
-    <paper-dropdown-menu id="object" label="{{label}}" on-selected-item-changed="change">
+    <paper-dropdown-menu id="object" label="{{label}}" label="label" on-selected-item-changed="change" 
+                        placeholder="{{placeHolder}}">
       <paper-listbox slot="dropdown-content" selected="{{selected}}">
           <slot></slot>
       </paper-listbox>
@@ -41,6 +42,9 @@
           },
           callback:{
             type:Object
+          },
+          placeHolder:{
+            type:String
           }
       },
       change:function() {        
